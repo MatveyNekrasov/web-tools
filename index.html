@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/global.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Web MultiTool</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title content-section">Web-MultiTool</h1>
+    </header>
+    <main class="main">
+      <div class="tools__layout">
+        <ul class="tools__list content-section">
+          <li class="tools__list-item">
+            <button class="tools__button is-active" data-toolbutton-id="0">
+              Конвертер изображений
+            </button>
+          </li>
+          <li class="tools__list-item">
+            <button class="tools__button" data-toolbutton-id="1">
+              Расчет хеш-суммы
+            </button>
+          </li>
+          <li class="tools__list-item">
+            <button class="tools__button" data-toolbutton-id="2">
+              Работа с форматом Base64
+            </button>
+          </li>
+          <li class="tools__list-item">
+            <button class="tools__button" data-toolbutton-id="3">
+              Работа с QR-кодами
+            </button>
+          </li>
+          <li class="tools__list-item">
+            <button class="tools__button" data-toolbutton-id="4">Сеть</button>
+          </li>
+        </ul>
+      </div>
+      <section
+        class="tools-tab tools-tab-show tools__image-convertor__section content-section"
+        data-tool-id="0"
+      >
+        <h2 class="section__title">Онлайн конвертер изображений</h2>
+        <form method="post" class="section__form" name="image-convertor-form">
+          <div class="wrapper">
+            <label for="image-convertor__file" class="file-input-label"
+              >Выберите изображение</label
+            >
+            <input
+              type="file"
+              accept="image/*"
+              id="image-convertor__file"
+              class="file-input"
+              required
+            />
+          </div>
+          <div class="wrapper">
+            <label for="image-convertor__file-extensions" class="select__label"
+              >Выберите необходимый формат</label
+            >
+            <select id="image-convertor__file-extensions" class="select">
+              <option value="webp">webp</option>
+              <option value="jpg">jpg</option>
+              <option value="jpeg">jpeg</option>
+              <option value="png">png</option>
+              <option value="gif">gif</option>
+              <option value="hdr">hdr</option>
+              <option value="png00">png00</option>
+              <option value="png8">png8</option>
+              <option value="png24">png24</option>
+              <option value="png32">png32</option>
+              <option value="png48">png48</option>
+              <option value="png64">png64</option>
+              <option value="ppm">ppm</option>
+              <option value="raf">raf</option>
+              <option value="rgb">rgb</option>
+              <option value="wpg">wpg</option>
+              <option value="aai">aai</option>
+              <option value="art">art</option>
+              <option value="avi">avi</option>
+              <option value="avs">avs</option>
+              <option value="bmp">bmp</option>
+              <option value="brf">brf</option>
+              <option value="cip">cip</option>
+              <option value="crw">crw</option>
+              <option value="dcr">dcr</option>
+              <option value="dds">dds</option>
+              <option value="dng">dng</option>
+              <option value="epi">epi</option>
+              <option value="isobrl">isobrl</option>
+              <option value="jbig">jbig</option>
+              <option value="jng">jng</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label
+              for="image-convertor__file-size__range"
+              class="image-convertor__file-size__range-label"
+              >Размер файла</label
+            >
+            <input
+              type="range"
+              id="image-convertor__file-size__range"
+              class="image-convertor__file-size__range"
+              min="1"
+              max="100"
+            />
+          </div>
+          <button class="submit-button" type="submit">
+            Конвертировать файл
+          </button>
+        </form>
+      </section>
+      <section
+        class="tools-tab tools__hash__section content-section"
+        data-tool-id="1"
+      >
+        <h2 class="section__title">Расчет хеш-суммы строки или файла</h2>
+        <div class="section__form">
+          <input
+            type="radio"
+            class="hide"
+            id="hash-form__text-button"
+            name="hash-form__selector"
+            checked
+          />
+          <label for="hash-form__text-button" class="pseudo-radiobutton"
+            >Текст</label
+          >
+          <input
+            type="radio"
+            class="hide"
+            id="hash-form__file-button"
+            name="hash-form__selector"
+          />
+          <label for="hash-form__file-button" class="pseudo-radiobutton"
+            >Файл</label
+          >
+          <div class="hash-form__text-tab">
+            <form method="post" name="hash-form__text">
+              <label for="hash-form__text-data" class="textarea__label"
+                >Введите текст</label
+              >
+              <textarea
+                name="hash-form__text-data"
+                id="hash-form__text-data"
+                class="form__text-data"
+                required
+              ></textarea>
+              <div class="wrapper">
+                <label for="hash-extensions-text" class="select__label"
+                  >Выберите необходимый формат</label
+                >
+                <select id="hash-extensions-text" class="select">
+                  <option value="md5">md5</option>
+                  <option value="md2">md2</option>
+                  <option value="md4">md4</option>
+                  <option value="sha1">sha1</option>
+                  <option value="sha224">sha224</option>
+                  <option value="sha256">sha256</option>
+                  <option value="sha384">sha384</option>
+                  <option value="sha512">sha512</option>
+                  <option value="ripemd128">ripemd128</option>
+                  <option value="ripemd160">ripemd160</option>
+                  <option value="ripemd256">ripemd256</option>
+                  <option value="ripemd320">ripemd320</option>
+                  <option value="whirlpool">whirlpool</option>
+                  <option value="snefru">snefru</option>
+                  <option value="snefru256">snefru256</option>
+                  <option value="gost-crypto">gost-crypto</option>
+                  <option value="adler32">adler32</option>
+                  <option value="crc32">crc32</option>
+                  <option value="crc32b">crc32b</option>
+                  <option value="fnv132">fnv132</option>
+                  <option value="fnv1a32">fnv1a32</option>
+                  <option value="fnv164">fnv164</option>
+                  <option value="fnv1a64">fnv1a64</option>
+                  <option value="joaat">joaat</option>
+                </select>
+              </div>
+              <button type="submit" class="submit-button">
+                Рассчитать хэш текста
+              </button>
+            </form>
+          </div>
+          <div class="hash-form__file-tab">
+            <form method="post" name="hash-form__file">
+              <div class="wrapper">
+                <label for="hash-form__file-input" class="file-input-label"
+                  >Выберите файл</label
+                >
+                <input
+                  type="file"
+                  id="hash-form__file-input"
+                  class="file-input"
+                  required
+                />
+              </div>
+              <div class="wrapper">
+                <label for="hash-extensions-file" class="select__label"
+                  >Выберите необходимый формат</label
+                >
+                <select id="hash-extensions-file" class="select">
+                  <option value="md5">md5</option>
+                  <option value="md2">md2</option>
+                  <option value="md4">md4</option>
+                  <option value="sha1">sha1</option>
+                  <option value="sha224">sha224</option>
+                  <option value="sha256">sha256</option>
+                  <option value="sha384">sha384</option>
+                  <option value="sha512">sha512</option>
+                  <option value="ripemd128">ripemd128</option>
+                  <option value="ripemd160">ripemd160</option>
+                  <option value="ripemd256">ripemd256</option>
+                  <option value="ripemd320">ripemd320</option>
+                  <option value="whirlpool">whirlpool</option>
+                  <option value="snefru">snefru</option>
+                  <option value="snefru256">snefru256</option>
+                  <option value="gost-crypto">gost-crypto</option>
+                  <option value="adler32">adler32</option>
+                  <option value="crc32">crc32</option>
+                  <option value="crc32b">crc32b</option>
+                  <option value="fnv132">fnv132</option>
+                  <option value="fnv1a32">fnv1a32</option>
+                  <option value="fnv164">fnv164</option>
+                  <option value="fnv1a64">fnv1a64</option>
+                  <option value="joaat">joaat</option>
+                </select>
+              </div>
+              <button type="submit" class="submit-button">
+                Рассчитать хэш файла
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="tools-tab tools__base64__section content-section"
+        data-tool-id="2"
+      >
+        <h2 class="section__title">Работа с форматом Base64</h2>
+        <div class="section__form">
+          <input
+            type="radio"
+            class="hide"
+            id="base64-form__file-button"
+            name="base64-form__selector"
+            checked
+          />
+          <label for="base64-form__file-button" class="pseudo-radiobutton"
+            >В Base64</label
+          >
+          <input
+            type="radio"
+            class="hide"
+            id="base64-form__text-button"
+            name="base64-form__selector"
+          />
+          <label for="base64-form__text-button" class="pseudo-radiobutton"
+            >Из Base64</label
+          >
+          <div class="base64-form__file-tab">
+            <form method="post" name="base64-form__file">
+              <div class="wrapper">
+                <h3 class="form__subtitle">
+                  Конвертировать изображение в Base64
+                </h3>
+                <label for="base64-form__file-input" class="file-input-label"
+                  >Выберите изображение</label
+                >
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="base64-form__file-input"
+                  class="file-input"
+                  required
+                />
+              </div>
+              <button type="submit" class="submit-button">
+                Перевести в формат Base64
+              </button>
+            </form>
+          </div>
+          <div class="base64-form__text-tab">
+            <form method="post" name="base64-form__text">
+              <h3 class="form__subtitle">
+                Конвертировать Base64 в изображение
+              </h3>
+              <label for="base64-form__text-data" class="textarea__label"
+                >Введите текст</label
+              >
+              <textarea
+                name="base64-form__text-data"
+                id="base64-form__text-data"
+                class="form__text-data"
+                required
+              ></textarea>
+              <button type="submit" class="submit-button">
+                Перевести из формата Base64
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="tools-tab tools__qr__section content-section"
+        data-tool-id="3"
+      >
+        <h2 class="section__title">Работа с QR-кодами</h2>
+        <div class="section__form">
+          <input
+            type="radio"
+            class="hide"
+            id="qr-form__text-button"
+            name="qr-form__selector"
+            checked
+          />
+          <label for="qr-form__text-button" class="pseudo-radiobutton"
+            >Генерация QR-кода</label
+          >
+          <input
+            type="radio"
+            class="hide"
+            id="qr-form__file-button"
+            name="qr-form__selector"
+          />
+          <label for="qr-form__file-button" class="pseudo-radiobutton"
+            >Чтение QR-кода</label
+          >
+          <div class="qr-form__text-tab">
+            <form method="post" name="qr-form__text">
+              <label for="qr-form__text-data" class="textarea__label"
+                >Введите текст</label
+              >
+              <textarea
+                name="qr-form__text-data"
+                id="qr-form__text-data"
+                class="form__text-data"
+                required
+              ></textarea>
+              <button type="submit" class="submit-button">
+                Сгенерировать QR-код
+              </button>
+            </form>
+          </div>
+          <div class="qr-form__file-tab">
+            <form method="post" name="qr-form__file">
+              <div class="wrapper">
+                <label for="qr-form__file-input" class="file-input-label"
+                  >Выберите изображение</label
+                >
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="qr-form__file-input"
+                  class="file-input"
+                  required
+                />
+              </div>
+              <button type="submit" class="submit-button">
+                Прочитать QR-код
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="tools-tab tools__network__section content-section"
+        data-tool-id="4"
+      ></section>
+    </main>
+    <footer class="footer">
+      <h2 class="footer__text">All rights reserved!</h2>
+    </footer>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
