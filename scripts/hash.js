@@ -1,5 +1,4 @@
 "use strict";
-const BASE_URL = "https://dev.web-tools.fun";
 
 const textToHashForm = document.forms["hash-form__text"];
 const fileToHashForm = document.forms["hash-form__file"];
@@ -70,25 +69,4 @@ async function sendDataForHashing(dataType, data, hashExtension) {
   } catch (err) {
     console.log(err);
   }
-}
-
-function createResultContainer(parentElement, containerSubtitleText, data) {
-  const oldContainerSubtitle = parentElement.querySelector(".result-subtitle");
-  const oldResultContainer = parentElement.querySelector(".result");
-
-  if (oldResultContainer || oldContainerSubtitle) {
-    oldContainerSubtitle.textContent = containerSubtitleText;
-    oldResultContainer.textContent = data;
-    return;
-  }
-
-  const containerSubtitle = document.createElement("h3");
-  containerSubtitle.classList.add("result-subtitle");
-  containerSubtitle.textContent = containerSubtitleText;
-
-  const resultContrainer = document.createElement("div");
-  resultContrainer.classList.add("result");
-  resultContrainer.textContent = data;
-
-  parentElement.append(containerSubtitle, resultContrainer);
 }
