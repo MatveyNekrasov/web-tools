@@ -87,7 +87,14 @@
 }
 
 .file-input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .select__label {
@@ -225,6 +232,7 @@ input[type="radio"]:checked + .pseudo-radiobutton {
 .form__text-data {
   display: block;
   margin-block-end: 20px;
+  padding: 10px;
   color: #212529;
   font-family: inherit;
   font-size: inherit;
@@ -244,14 +252,21 @@ input[type="radio"]:checked + .pseudo-radiobutton {
 }
 
 .result {
-  margin: 10px 10px 10px 0;
+  margin-inline: auto;
   border: 1px solid #a5a5a5;
   padding: 10px;
   overflow-y: hidden;
-  color: red;
-  inline-size: fit-content;
-  max-inline-size: 100%;
-  block-size: 80px;
+  max-inline-size: 50%;
+  min-inline-size: 205px;
+  min-block-size: 80px;
+}
+
+.result-subtitle {
+  margin-inline: auto;
+  padding-block: 10px;
+  font-size: clamp(1rem, 0.172vw + 0.966rem, 1.125rem);
+  max-inline-size: 50%;
+  min-inline-size: 205px;
 }
 
 .form__subtitle {

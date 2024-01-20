@@ -140,7 +140,7 @@
             >Файл</label
           >
           <div class="hash-form__text-tab">
-            <form method="post" name="hash-form__text">
+            <form method="get" name="hash-form__text">
               <label for="hash-form__text-data" class="textarea__label"
                 >Введите текст</label
               >
@@ -154,7 +154,11 @@
                 <label for="hash-extensions-text" class="select__label"
                   >Выберите необходимый формат</label
                 >
-                <select id="hash-extensions-text" class="select">
+                <select
+                  name="hash-extensions-text"
+                  id="hash-extensions-text"
+                  class="select"
+                >
                   <option value="md5">md5</option>
                   <option value="md2">md2</option>
                   <option value="md4">md4</option>
@@ -196,6 +200,7 @@
                   type="file"
                   id="hash-form__file-input"
                   class="file-input"
+                  name="hash-form__file-input"
                   required
                 />
               </div>
@@ -376,5 +381,6 @@
       <h2 class="footer__text">All rights reserved!</h2>
     </footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/hash.js"></script>
   </body>
 </html>
