@@ -55,7 +55,7 @@ async function sendDataForHashing(dataType, data, hashExtension) {
       return await response.json();
     } else if (dataType === "file") {
       const response = await fetch(
-        `${BASE_URL}/api/generate&extension=${hashExtension}`,
+        `${BASE_URL}/api/generate?extension=${hashExtension}`,
         {
           method: "POST",
           body: data,
