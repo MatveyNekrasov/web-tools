@@ -23,8 +23,9 @@ textToHashForm.addEventListener("submit", async (evt) => {
 fileToHashForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
-  const formData = new FormData(fileToHashForm);
-  /* const fileValue = formData.get("hash-form__file-input"); */
+  const formData = new FormData();
+  const fileValue = fileToHashForm.elements["hash-form__file-input"].files[0];
+  formData.append("file", fileValue);
   const hashExtension = fileToHashForm.elements["hash-extensions-file"].value;
 
   const hashObject = await sendDataForHashing("file", formData, hashExtension);
