@@ -44,8 +44,6 @@ async function sendDataForHashing(dataType, data, hashExtension) {
         `${BASE_URL}/api/generate?text=${data}&extension=${hashExtension}`
       );
 
-      /* const response = await fetch("./hash.json"); */
-
       if (!response.ok) {
         throw new Error(response.statusText);
       }

@@ -53,6 +53,7 @@
               type="file"
               accept="image/*"
               id="image-convertor__file"
+              name="image-convertor__file"
               class="file-input"
               required
             />
@@ -61,7 +62,11 @@
             <label for="image-convertor__file-extensions" class="select__label"
               >Выберите необходимый формат</label
             >
-            <select id="image-convertor__file-extensions" class="select">
+            <select
+              id="image-convertor__file-extensions"
+              class="select"
+              name="image-convertor__file-extensions"
+            >
               <option value="webp">webp</option>
               <option value="jpg">jpg</option>
               <option value="jpeg">jpeg</option>
@@ -291,7 +296,7 @@
             </form>
           </div>
           <div class="base64-form__text-tab">
-            <form method="get" name="base64-form__text">
+            <form method="post" name="base64-form__text">
               <h3 class="form__subtitle">
                 Конвертировать Base64 в изображение
               </h3>
@@ -337,7 +342,7 @@
             >Чтение QR-кода</label
           >
           <div class="qr-form__text-tab">
-            <form method="post" name="qr-form__text">
+            <form method="get" name="qr-form__text">
               <label for="qr-form__text-data" class="textarea__label"
                 >Введите текст</label
               >
@@ -362,6 +367,7 @@
                   type="file"
                   accept="image/*"
                   id="qr-form__file-input"
+                  name="qr-form__file-input"
                   class="file-input"
                   required
                 />
@@ -382,7 +388,9 @@
       <h2 class="footer__text">All rights reserved!</h2>
     </footer>
     <script src="./scripts/utils.js"></script>
+    <script src="./scripts/image-convertor.js"></script>
     <script src="./scripts/hash.js"></script>
     <script src="./scripts/base64.js"></script>
+    <script src="./scripts/qr.js"></script>
   </body>
 </html>

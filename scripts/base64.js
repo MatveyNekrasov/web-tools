@@ -25,8 +25,10 @@ base64ToImageForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
   const textValue = base64ToImageForm.elements["base64-form__text-data"].value;
+  const formData = new FormData();
+  formData.append("text", textValue);
 
-  const responseBlob = await sendDataForBase64("text", textValue);
+  const responseBlob = await sendDataForBase64("text", formData);
 
   const url = URL.createObjectURL(responseBlob);
   const link = document.createElement("a");
@@ -39,9 +41,10 @@ base64ToImageForm.addEventListener("submit", async (evt) => {
 async function sendDataForBase64(dataType, data) {
   try {
     if (dataType === "text") {
-      const response = await fetch(
-        `${BASE_URL}/api/base64/textGenerate?text=${data}`
-      );
+      const response = await fetch(`${BASE_URL}/api/base64/textGenerate`, {
+        method: "POST",
+        body: data,
+      });
 
       if (!response.ok) {
         throw new Error(response.statusText);
