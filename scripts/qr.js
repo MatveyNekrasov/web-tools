@@ -48,7 +48,10 @@ readQrCodeForm.addEventListener("submit", async (evt) => {
 async function sendDataToQr(dataType, data) {
   try {
     if (dataType === "text") {
-      const response = await fetch(`${BASE_URL}/api/qr/textGenerate`);
+      const response = await fetch(`${BASE_URL}/api/qr/textGenerate`, {
+        method: "POST",
+        body: data,
+      });
 
       if (!response.ok) {
         throw new Error(response.statusText);
