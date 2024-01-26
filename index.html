@@ -46,17 +46,20 @@
         <h2 class="section__title">Онлайн конвертер изображений</h2>
         <form method="post" class="section__form" name="image-convertor-form">
           <div class="wrapper">
-            <label for="image-convertor__file" class="file-input-label"
-              >Выберите изображение</label
-            >
-            <input
-              type="file"
-              accept="image/*"
-              id="image-convertor__file"
-              name="image-convertor__file"
-              class="file-input"
-              required
-            />
+            <div class="drop-container">
+              <span>Перетащите изображение...</span>
+              <label for="image-convertor__file" class="file-input-label"
+                >...или нажмите сюда</label
+              >
+              <input
+                type="file"
+                accept="image/*"
+                id="image-convertor__file"
+                name="image-convertor__file"
+                class="file-input"
+                required
+              />
+            </div>
           </div>
           <div class="wrapper">
             <label for="image-convertor__file-extensions" class="select__label"
@@ -198,16 +201,19 @@
           <div class="hash-form__file-tab">
             <form method="post" name="hash-form__file">
               <div class="wrapper">
-                <label for="hash-form__file-input" class="file-input-label"
-                  >Выберите файл</label
-                >
-                <input
-                  type="file"
-                  id="hash-form__file-input"
-                  class="file-input"
-                  name="hash-form__file-input"
-                  required
-                />
+                <div class="drop-container">
+                  <span>Перетащите файл...</span>
+                  <label for="hash-form__file-input" class="file-input-label"
+                    >...или нажмите сюда</label
+                  >
+                  <input
+                    type="file"
+                    id="hash-form__file-input"
+                    class="file-input"
+                    name="hash-form__file-input"
+                    required
+                  />
+                </div>
               </div>
               <div class="wrapper">
                 <label for="hash-extensions-file" class="select__label"
@@ -278,17 +284,20 @@
                 <h3 class="form__subtitle">
                   Конвертировать изображение в Base64
                 </h3>
-                <label for="base64-form__file-input" class="file-input-label"
-                  >Выберите изображение</label
-                >
-                <input
-                  type="file"
-                  accept="image/*"
-                  id="base64-form__file-input"
-                  class="file-input"
-                  name="base64-form__file-input"
-                  required
-                />
+                <div class="drop-container">
+                  <span>Перетащите изображение...</span>
+                  <label for="base64-form__file-input" class="file-input-label"
+                    >...или нажмите сюда</label
+                  >
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="base64-form__file-input"
+                    class="file-input"
+                    name="base64-form__file-input"
+                    required
+                  />
+                </div>
               </div>
               <button type="submit" class="submit-button">
                 Перевести в формат Base64
@@ -360,17 +369,20 @@
           <div class="qr-form__file-tab">
             <form method="post" name="qr-form__file">
               <div class="wrapper">
-                <label for="qr-form__file-input" class="file-input-label"
-                  >Выберите изображение</label
-                >
-                <input
-                  type="file"
-                  accept="image/*"
-                  id="qr-form__file-input"
-                  name="qr-form__file-input"
-                  class="file-input"
-                  required
-                />
+                <div class="drop-container">
+                  <span>Перетащите изображение qr-кода...</span>
+                  <label for="qr-form__file-input" class="file-input-label"
+                    >...или нажмите сюда</label
+                  >
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="qr-form__file-input"
+                    name="qr-form__file-input"
+                    class="file-input"
+                    required
+                  />
+                </div>
               </div>
               <button type="submit" class="submit-button">
                 Прочитать QR-код
@@ -392,5 +404,6 @@
     <script src="./scripts/hash.js"></script>
     <script src="./scripts/base64.js"></script>
     <script src="./scripts/qr.js"></script>
+    <script src="./scripts/dragdrop.js"></script>
   </body>
 </html>

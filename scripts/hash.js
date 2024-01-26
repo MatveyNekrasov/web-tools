@@ -13,7 +13,7 @@ textToHashForm.addEventListener("submit", async (evt) => {
   const hash = hashObject.hashText;
 
   createResultContainer(
-    document.querySelector(".tools__hash__section"),
+    document.querySelector(".hash-form__text-tab"),
     "Результат расчета хеша",
     hash
   );
@@ -31,7 +31,7 @@ fileToHashForm.addEventListener("submit", async (evt) => {
   const hash = hashObject.hashFile;
 
   createResultContainer(
-    document.querySelector(".tools__hash__section"),
+    document.querySelector(".hash-form__file-tab"),
     "Результат расчета хеша",
     hash
   );

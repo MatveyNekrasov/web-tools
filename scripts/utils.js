@@ -55,3 +55,13 @@ function createResultContainer(parentElement, containerSubtitleText, data) {
 
   parentElement.append(containerSubtitle, resultContrainer);
 }
+
+const fileInputs = document.querySelectorAll("input[type=file]");
+
+fileInputs.forEach((fileInput) => {
+  fileInput.addEventListener("change", (evt) => {
+    if (evt.target.files[0]) {
+      evt.target.previousElementSibling.textContent = `Выбран файл ${evt.target.files[0].name}`;
+    }
+  });
+});

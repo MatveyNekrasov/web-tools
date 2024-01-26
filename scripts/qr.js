@@ -10,10 +10,11 @@ createQrCodeForm.addEventListener("submit", async (evt) => {
   const formData = new FormData();
   formData.append("text", textValue);
 
-  const responseURL = await sendDataToQr("text", formData);
+  let responseURL = await sendDataToQr("text", formData);
+  responseURL = responseURL.slice(1, -1);
 
   createResultContainer(
-    document.querySelector(".tools__qr__section"),
+    document.querySelector(".qr-form__text-tab"),
     "Сгенерированный QR-код",
     ""
   );
@@ -39,7 +40,7 @@ readQrCodeForm.addEventListener("submit", async (evt) => {
   const responseData = await sendDataToQr("file", formData);
 
   createResultContainer(
-    document.querySelector(".tools__qr__section"),
+    document.querySelector(".qr-form__file-tab"),
     "Информация, закодированная выбранным QR-кодом",
     responseData
   );

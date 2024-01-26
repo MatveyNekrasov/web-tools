@@ -15,7 +15,7 @@ imageToBase64Form.addEventListener("submit", async (evt) => {
   const base64Value = base64Object.base64;
 
   createResultContainer(
-    document.querySelector(".tools__base64__section"),
+    document.querySelector(".base64-form__file-tab"),
     "Изображение в формате Base64",
     base64Value
   );

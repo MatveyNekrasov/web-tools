@@ -83,7 +83,8 @@
   text-align: center;
   background-color: #e9ecef;
   cursor: pointer;
-  inline-size: 100%;
+  inline-size: 70%;
+  word-wrap: break-word;
 }
 
 .file-input {
@@ -251,13 +252,32 @@ input[type="radio"]:checked + .pseudo-radiobutton {
   padding-block-end: 20px;
 }
 
+.drop-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px dashed #0d6efd;
+  border-radius: 20px;
+  padding-block: 25px;
+}
+
+.drop-hover {
+  box-shadow: 0 0 5px 5px rgb(84, 178, 233);
+  transition: box-shadow 0.3s ease;
+}
+
+.drop-container span {
+  text-align: center;
+}
+
 .result {
   margin-inline: auto;
   border: 1px solid #0d6efd;
   padding: 10px;
   overflow-y: hidden;
   color: #0d6efd;
-  max-inline-size: 50%;
+  max-inline-size: 100%;
   min-inline-size: 205px;
   min-block-size: 80px;
 }
