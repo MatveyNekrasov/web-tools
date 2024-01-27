@@ -13,7 +13,7 @@ imageConvertorForm.addEventListener("submit", async (evt) => {
   const resultImageExtension =
     imageConvertorForm.elements["image-convertor__file-extensions"].value;
 
-  const resultImage = await sendImageToConvert(fileValue, resultImageExtension);
+  const resultImage = await sendImageToConvert(formData, resultImageExtension);
 
   createResultContainer(
     document.querySelector(".tools__image-convertor__section"),
