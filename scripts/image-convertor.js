@@ -13,10 +13,7 @@ imageConvertorForm.addEventListener("submit", async (evt) => {
   const resultImageExtension =
     imageConvertorForm.elements["image-convertor__file-extensions"].value;
 
-  const resultImage = /* await */ sendImageToConvert(
-    formData,
-    resultImageExtension
-  );
+  const resultImage = await sendImageToConvert(formData, resultImageExtension);
 
   createResultContainer(
     document.querySelector(".tools__image-convertor__section"),
@@ -31,12 +28,12 @@ imageConvertorForm.addEventListener("submit", async (evt) => {
 
   const resultImageElement = document.createElement("img");
   resultImageElement.classList.add(".result-img");
-  /* resultImageElement.src = URL.createObjectURL(resultImage); */
+  resultImageElement.src = URL.createObjectURL(resultImage);
   document.querySelector(".result").append(resultImageElement);
 
   createSlider(
     fileValue,
-    fileValue,
+    resultImage,
     document.querySelector(".before-after-slider")
   );
 });
