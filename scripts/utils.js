@@ -1,6 +1,6 @@
 "use strict";
 
-const BASE_URL = "https://dev.web-tools.fun";
+const BASE_URL = "http://dev.web-tools.fun";
 
 document.addEventListener("click", (evt) => {
   if (evt.target && !evt.target.closest(".tools__button")) {

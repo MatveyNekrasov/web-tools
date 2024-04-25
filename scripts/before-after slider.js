@@ -8,7 +8,6 @@ const resizer = document.querySelector(".resizer");
 let isActive = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-  debugger;
   let width = slider.offsetWidth
     ? slider.offsetWidth
     : document.forms["image-convertor-form"].offsetWidth;

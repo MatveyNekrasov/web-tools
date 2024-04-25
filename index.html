@@ -35,7 +35,9 @@
             </button>
           </li>
           <li class="tools__list-item">
-            <button class="tools__button" data-toolbutton-id="4">Сеть</button>
+            <button class="tools__button" data-toolbutton-id="4">
+              Генератор текста
+            </button>
           </li>
         </ul>
       </div>
@@ -403,9 +405,28 @@
         </div>
       </section>
       <section
-        class="tools-tab tools__network__section content-section"
+        class="tools-tab tools__lorem__section content-section"
         data-tool-id="4"
-      ></section>
+      >
+        <h2 class="section__title">Генератор текста</h2>
+        <form name="lorem-form">
+          <label for="lorem-form__string-count" class="textarea__label"
+            >Введите количество строк текста</label
+          >
+          <input
+            type="number"
+            min="0"
+            value="5"
+            class="form__text-data"
+            id="lorem-form__string-count"
+            name="lorem-string-count"
+          />
+          <button type="submit" class="submit-button">
+            Сгенерировать текст
+          </button>
+        </form>
+        <div class="lorem__result"></div>
+      </section>
     </main>
     <footer class="footer">
       <h2 class="footer__text">All rights reserved!</h2>
@@ -417,5 +438,6 @@
     <script src="./scripts/qr.js"></script>
     <script src="./scripts/dragdrop.js"></script>
     <script src="./scripts/before-after slider.js"></script>
+    <script src="./scripts/lorem.js"></script>
   </body>
 </html>
