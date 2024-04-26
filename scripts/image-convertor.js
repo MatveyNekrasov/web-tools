@@ -15,21 +15,17 @@ imageConvertorForm.addEventListener("submit", async (evt) => {
 
   const resultImage = await sendImageToConvert(formData, resultImageExtension);
 
-  createResultContainer(
-    document.querySelector(".tools__image-convertor__section"),
-    `Изображение в формате ${resultImageExtension}`,
-    ""
-  );
+  const downloadButton = imageConvertorForm.querySelector(".download-button");
 
-  const oldResult = document.querySelector(".result-img");
-  if (oldResult) {
-    oldResult.remove();
+  if (downloadButton) {
+    downloadButton.remove();
   }
 
-  const resultImageElement = document.createElement("img");
-  resultImageElement.classList.add(".result-img");
-  resultImageElement.src = URL.createObjectURL(resultImage);
-  document.querySelector(".result").append(resultImageElement);
+  const newButton = document.createElement("button");
+  newButton.classList.add("submit-button", "download-button");
+  newButton.addEventListener("click", () => handleDownload(resultImage));
+  newButton.textContent = "Скачать полученное изображение";
+  imageConvertorForm.append(newButton);
 
   createSlider(
     fileValue,
@@ -79,4 +75,16 @@ function handleFileReaderLoad(evt, imageElement, containerElement) {
   ) {
     containerElement.classList.add("is-shown");
   }
+}
+
+function handleDownload(file) {
+  const element = document.createElement("a");
+  const url = URL.createObjectURL(file);
+  element.setAttribute("href", url);
+  element.setAttribute("download", file.name);
+  element.style.display = "none";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+  URL.revokeObjectURL(url);
 }

@@ -1,7 +1,6 @@
 const loremForm = document.forms["lorem-form"];
 const loremFormSubmitButton = loremForm.querySelector(".submit-button");
 const loremStringCountElement = loremForm.elements["lorem-string-count"];
-const loremContainer = document.querySelector(".lorem__result");
 
 async function getLoremText(stringCount) {
   try {
@@ -24,8 +23,12 @@ async function handleLoremFormSubmit(evt) {
 
   const generatedText = await getLoremText(loremStringCountElement.value);
   const formatedText = generatedText.split("\n\n");
-  console.log(formatedText);
-  loremContainer.textContent = generatedText;
+
+  createResultContainer(
+    document.querySelector(".tools__lorem__section"),
+    "Сгенерированный текст",
+    generatedText
+  );
 }
 
 loremForm.addEventListener("submit", handleLoremFormSubmit);

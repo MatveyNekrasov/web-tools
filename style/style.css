@@ -276,10 +276,12 @@ input[type="radio"]:checked + .pseudo-radiobutton {
   border: 1px solid #0d6efd;
   padding: 10px;
   overflow-y: hidden;
-  color: #0d6efd;
+  /* color: #0d6efd; */
   max-inline-size: 100%;
   min-inline-size: 205px;
   min-block-size: 80px;
+  white-space: break-spaces;
+  margin-block-end: 30px;
 }
 
 .result-subtitle {
@@ -333,7 +335,7 @@ input[type="radio"]:checked + .pseudo-radiobutton {
   -ms-user-select: none;
   user-select: none;
   inline-size: 100%;
-  aspect-ratio: 1 / 1;
+  block-size: auto;
 }
 
 .resizer {
@@ -371,6 +373,14 @@ input[type="radio"]:checked + .pseudo-radiobutton {
 
 .is-shown {
   display: block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.download-button {
+  margin-block-end: 30px;
 }
 
 .footer {

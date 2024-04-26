@@ -25,7 +25,7 @@ createQrCodeForm.addEventListener("submit", async (evt) => {
   }
 
   const resultImageElement = document.createElement("img");
-  resultImageElement.classList.add(".result-img");
+  resultImageElement.classList.add("result-img");
   resultImageElement.src = responseURL;
   document.querySelector(".result").append(resultImageElement);
 });
