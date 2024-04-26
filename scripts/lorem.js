@@ -4,9 +4,7 @@ const loremStringCountElement = loremForm.elements["lorem-string-count"];
 
 async function getLoremText(stringCount) {
   try {
-    const response = await fetch(
-      `https://api.codetabs.com/v1/proxy?quest=https://dev.web-tools.fun/api/lorem?length=${stringCount}`
-    );
+    const response = await fetch(`${BASE_URL}/api/lorem?length=${stringCount}`);
 
     if (!response.ok) {
       throw new Error(response.statusText);
